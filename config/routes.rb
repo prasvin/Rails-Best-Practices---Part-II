@@ -1,8 +1,9 @@
 Blog::Application.routes.draw do |map|
   resources :users do
-    resources :posts do
-      resources :comments
-    end
+    resources :posts
+  end
+  resources :posts do
+    resources :comments
   end
   root :to => "posts#index"
 
